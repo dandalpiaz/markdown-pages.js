@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Markdown Pages - a simple template for Markdown-based sites on GitHub Pages">
+	<link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+	<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<title>Markdown Pages</title>
+</head>
+
+<body>
+	<main role="main" class="container">
+		<div id="insert"></div>
+	</main>
+
+<script type="text/javascript">
+
+function getParameterByName(name, url = window.location.href) {
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+var page = getParameterByName('page');
+if (page) {
+	page = "/pages/" + page + ".md"
+} else {
+	page = "README.md";
+}
+
+var client = new XMLHttpRequest();
+client.open('GET', page);
+client.onreadystatechange = function() {
+	if (client.readyState == 4 && client.status == 200) {
+		if (client.responseText) {
+			var div = document.getElementById('insert');
+			div.innerHTML += client.responseText;
+			var conv = new showdown.Converter();
+			document.getElementById('insert').innerHTML = conv.makeHtml(div.innerHTML);
+			var h1s = document.getElementsByTagName("h1");
+			for (var i = 0; i < h1s.length; i++) {
+			    var h1 = h1s[i];
+			    document.title = h1.innerHTML + " | " + document.title;
+			}
+		}
+	}
+}
+client.send();
+
+</script>
+</body>
+</html>

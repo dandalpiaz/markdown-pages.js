@@ -9,12 +9,6 @@
 	<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<title>Markdown Pages</title>
-	<style>
-		/* increase color contrast for a11y */
-		code {
-			color: rgb(135, 150, 160);
-		}
-	</style>
 </head>
 
 <body>
@@ -35,7 +29,7 @@ function getParameterByName(name, url = window.location.href) {
 
 var page = getParameterByName('page');
 if (page) {
-	page = "pages/" + page + ".md"
+	page = "/pages/" + page + ".md"
 } else {
 	page = "README.md";
 }
@@ -48,7 +42,15 @@ client.onreadystatechange = function() {
 			var div = document.getElementById('insert');
 			div.innerHTML += client.responseText;
 			var conv = new showdown.Converter();
-			document.getElementById('insert').innerHTML = conv.makeHtml(div.innerHTML);
+			conv.setOption('tables', 'true');
+			conv.setOption('emoji', 'true');
+			conv.setOption('ghCompatibleHeaderId', 'true');
+			conv.setOption('simpleLineBreaks', 'true');
+			//conv.setOption('parseImgDimensions', 'true');
+			//conv.setOption('ghCodeBlocks', 'true');
+			//conv.setOption('openLinksInNewWindow', 'true');
+			//document.getElementById('insert').innerHTML = conv.makeHtml(div.innerHTML);
+			document.getElementById('insert').innerHTML = conv.makeHtml(div.textContent);
 			var h1s = document.getElementsByTagName("h1");
 			for (var i = 0; i < h1s.length; i++) {
 			    var h1 = h1s[i];

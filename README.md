@@ -8,8 +8,8 @@ This template allows for the creation of a simple website that utilizes Markdown
 ## Table of Contents
 
 - [About](#about)
-- [Getting Started](#gettingstarted)
-- [File Structure](#filestructure)
+- [Getting Started](#getting-started)
+- [File Structure](#file-structure)
 - [Limitations](#limitations)
 
 ## About

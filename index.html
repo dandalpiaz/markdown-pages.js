@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
 	<meta charset="utf-8">
@@ -10,6 +10,23 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<title>Markdown Pages</title>
 	<style>
+		/* style overrides */
+
+		@media (max-width: 1199px) {
+			.container {
+				max-width: 100%;
+				padding-left: 30px;
+				padding-right: 30px;
+			}
+		}
+
+		@media (max-width: 575px) {
+			.container {
+				padding-left: 16px;
+				padding-right: 16px;
+			}
+		}
+
 		/* increase color contrast for a11y */
 		code {
 			color: rgb(135, 150, 160);

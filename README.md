@@ -77,3 +77,5 @@ With no templating engine in use, and a reliance on Markdown for content creatio
 - **No custom layouts** - Markdown used in this way is fairly linear, so you won't be able to do a columns and fancy layouts without a lot of extra work.
 - **No semantic menus/landmarks** - the converter is set to take the Markdown content and place it inside the `<main>` landmark. Other landmarks aren't currently represented. 
 - **No dynamic/reusable content** - currently no mechanism to reuse content across mulitple pages.
+
+[`live`](https://dandalpiaz.github.io/markdown-pages/) [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/master/README.md)

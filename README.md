@@ -78,4 +78,8 @@ With no templating engine in use, and a reliance on Markdown for content creatio
 - **No semantic menus/landmarks** - the converter is set to take the Markdown content and place it inside the `<main>` landmark. Other landmarks aren't currently represented. 
 - **No dynamic/reusable content** - currently no mechanism to reuse content across mulitple pages.
 
-[`live`](https://dandalpiaz.github.io/markdown-pages/) [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/master/README.md)
+## TODO
+
+- Home/Edit buttons
+- Incorporate index.html changes
+- Light/Dark mode toggle

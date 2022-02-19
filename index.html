@@ -31,15 +31,61 @@
 		code {
 			color: rgb(135, 150, 160);
 		}
+
+		a code {
+			color: var(--code-tag-color) !important;
+			font-size: 0.8rem;
+			vertical-align: middle;
+		}
+		
+		h2 {
+			margin-bottom: 1.5rem;
+		}
+
+		#light-toggle {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			padding: 5px;
+			font-size: 14px;
+			font-weight: 500;
+		}
+
+		[data-theme="light"] code {
+			color: rgb(100, 125, 135);
+		}
 	</style>
 </head>
 
 <body>
 	<main role="main" class="container">
+		<a href="#" role="button" onclick="toggleLight();return false;" id="light-toggle" class="contrast">⦿ Light</a>
 		<div id="insert"></div>
 	</main>
 
 <script type="text/javascript">
+
+(function () {
+	var mode = localStorage.getItem("mode");
+	if (mode == "light") {
+		document.documentElement.setAttribute("data-theme", "light");
+		document.getElementById('light-toggle').innerHTML = "⦿ Dark";
+	}
+})();
+
+function toggleLight() {
+	var mode = localStorage.getItem("mode");
+	if (mode == "light") {
+		document.documentElement.setAttribute("data-theme", "dark");
+		document.getElementById('light-toggle').innerHTML = "⦿ Light";
+    	localStorage.setItem("mode", "dark");
+	}
+	if (mode == "dark" || mode == null) {
+		document.documentElement.setAttribute("data-theme", "light");
+		document.getElementById('light-toggle').innerHTML = "⦿ Dark";
+		localStorage.setItem("mode", "light");
+	}
+}
 
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -57,6 +103,7 @@ if (page) {
 	page = "README.md";
 }
 
+// request markdown file
 var client = new XMLHttpRequest();
 client.open('GET', page);
 client.onreadystatechange = function() {
@@ -77,7 +124,7 @@ client.onreadystatechange = function() {
 			var h1s = document.getElementsByTagName("h1");
 			for (var i = 0; i < h1s.length; i++) {
 			    var h1 = h1s[i];
-			    document.title = h1.innerHTML + " | " + document.title;
+			    document.title = h1.innerText.replace("edit", "").replace("home", "") + " | " + document.title;
 			}
 		}
 	}

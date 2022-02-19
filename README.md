@@ -3,6 +3,8 @@
 
 # Markdown Pages - a simple template for Markdown-based sites on GitHub Pages
 
+_`Last Updated: 2/18/2022`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/master/README.md) [`home`](https://dandalpiaz.github.io/)
+
 This template allows for the creation of a simple website that utilizes Markdown files for page content. The pages and files in this [GitHub ![GitHub Logo](assets/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
 
 ## Table of Contents

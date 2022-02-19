@@ -82,6 +82,4 @@ With no templating engine in use, and a reliance on Markdown for content creatio
 
 ## TODO
 
-- Home/Edit buttons
-- Incorporate index.html changes
-- Light/Dark mode toggle
+- Google Translate popping up?

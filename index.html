@@ -5,13 +5,16 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Markdown Pages - a simple template for Markdown-based sites on GitHub Pages">
-	<link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+	<link rel="shortcut icon" type="image/png" href="assets/user/favicon.png"/>
 	<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.4.4/css/pico.min.css">
+	<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/monokai-sublime.min.css">
+	<script src="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<title>Markdown Pages</title>
 	<style>
-		/* style overrides */
+		/**** style overrides *****/
 
+		/* adjust contain widths */
 		@media (max-width: 1199px) {
 			.container {
 				max-width: 100%;
@@ -27,21 +30,28 @@
 			}
 		}
 
-		/* increase color contrast for a11y */
+		/* increase code color contrast for a11y */
 		code {
 			color: rgb(135, 150, 160);
 		}
 
+		[data-theme="light"] code {
+			color: rgb(100, 125, 135);
+		}
+
+		/* keep link color for code links */
 		a code {
 			color: var(--code-tag-color) !important;
 			font-size: 0.8rem;
 			vertical-align: middle;
 		}
 		
+		/* adjust heading margins */
 		h2 {
 			margin-bottom: 1.5rem;
 		}
 
+		/* dark/light mode toggle button */
 		#light-toggle {
 			position: absolute;
 			top: 10px;
@@ -50,10 +60,12 @@
 			font-size: 14px;
 			font-weight: 500;
 		}
-
-		[data-theme="light"] code {
-			color: rgb(100, 125, 135);
+		
+		/* adjust syntax highlighting background */
+		.hljs {
+			background: rgb(24, 35, 44);
 		}
+
 	</style>
 </head>
 
@@ -65,6 +77,7 @@
 
 <script type="text/javascript">
 
+// get current light/dark mode on page load
 (function () {
 	var mode = localStorage.getItem("mode");
 	if (mode == "light") {
@@ -73,6 +86,7 @@
 	}
 })();
 
+// toggle between light and dark mode
 function toggleLight() {
 	var mode = localStorage.getItem("mode");
 	if (mode == "light") {
@@ -87,6 +101,7 @@ function toggleLight() {
 	}
 }
 
+// helper function to grab query string value
 function getParameterByName(name, url = window.location.href) {
     name = name.replace(/[\[\]]/g, '\\$&');
     var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
@@ -96,6 +111,7 @@ function getParameterByName(name, url = window.location.href) {
     return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
+// build URL for markdown file
 var page = getParameterByName('page');
 if (page) {
 	page = "pages/" + page + ".md"
@@ -119,13 +135,19 @@ client.onreadystatechange = function() {
 			//conv.setOption('parseImgDimensions', 'true');
 			//conv.setOption('ghCodeBlocks', 'true');
 			//conv.setOption('openLinksInNewWindow', 'true');
-			//document.getElementById('insert').innerHTML = conv.makeHtml(div.innerHTML);
+			
+			// convert markdown to HTML
 			document.getElementById('insert').innerHTML = conv.makeHtml(div.textContent);
+
+			// set title as first h1 plus site title
 			var h1s = document.getElementsByTagName("h1");
 			for (var i = 0; i < h1s.length; i++) {
 			    var h1 = h1s[i];
-			    document.title = h1.innerText.replace("edit", "").replace("home", "") + " | " + document.title;
+			    document.title = h1.innerText + " | " + document.title;
 			}
+
+			// apply syntax highlighting for code blocks
+			hljs.highlightAll();
 		}
 	}
 }

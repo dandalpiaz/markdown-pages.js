@@ -1,27 +1,29 @@
 
-![markdown logo](assets/markdown.png)
+![markdown logo](assets/user/markdown.png)
 
 # Markdown Pages - a simple template for Markdown-based sites on GitHub Pages
 
-_`Last Updated: 2/18/2022`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/master/README.md) [`home`](https://dandalpiaz.github.io/)
+_`Last Updated: 2/20/2022`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/master/README.md) [`home`](https://dandalpiaz.github.io/)
 
-This template allows for the creation of a simple website that utilizes Markdown files for page content. The pages and files in this [GitHub ![GitHub Logo](assets/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
+This template allows for the creation of a simple website that utilizes Markdown files for page content. The pages and files in this [GitHub ![GitHub Logo](assets/user/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
 
 ## Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting-started)
 - [File Structure](#file-structure)
+- [Styles](#styles)
 - [Limitations](#limitations)
 
 ## About
 
 The purpose of this project was to simplify the creation of a Markdown-based website. There are numerous static site generators (like Jekyll and Hugo) that can use Markdown files for content; however, they require additional backend setup and configuration.
 
-This template is very simple by design - focusing on informational content instead of any special layouts or advanced web elements. Other than GitHub pages, a site will require no other backend components, and the frontend uses just two libraries:
+This template is very simple by design - focusing on informational content instead of any special layouts or advanced web elements. Other than GitHub pages, a site will require no other backend components, and the frontend uses just three libraries:
 
 - **[Showdown JS](http://showdownjs.com/)** - for the conversion of Markdown to HTML
-- **[Pico CSS](https://picocss.com/)** - to add styles for the site (this can easily be switched out for something else in the `index.html` file)
+- **[Pico CSS](https://picocss.com/)** - to add default styles for the site
+- **[Highlight JS](https://highlightjs.org/)** - to add syntax highlighting for code blocks
 
 ## Getting Started 
 
@@ -32,8 +34,9 @@ To set up a site, simply fork or copy the files from the [markdown-pages reposit
 ```
 markdown-pages/
 |---assets/
-|	|---favicon.png
-|	|---example.png
+|------user/
+|	   |---favicon.png
+|	   |---example.png
 |---pages/
 |	|---sample-page.md
 |	|---sample-page-2.md
@@ -50,10 +53,10 @@ The `README.md` file will provide the content for the homepage of your site. Sim
 The `index.html` file does the magic of converting Markdown to HTML. It will also look for a heading level 1 (h1) on the current page and prepend it to the site title. You can add your site title by modifying this line in the header:
 
 ```
-<title>Markdown Pages</title>
+&lt;title&gt;Markdown Pages&lt;/title&gt;
 ```
 
-There are other lines in the header that you may want to edit as well, such as the meta description, the favicon image name/location, or the CSS include.
+There are other lines in the header that you may want to edit as well, such as the meta description and the favicon image name/location.
 
 
 ### Pages
@@ -68,7 +71,24 @@ Check out the [sample page](?page=sample-page).
 
 ### Assets
 
-Images and other files can be added to the `assets` directory and linked as needed. 
+Images and other files can be added to the `assets/user` directory and linked as needed. 
+
+## Styles
+
+### Dark/Light Mode
+
+The site will include a dark/light mode toggle button by default. When adding images to a page, consider adding images that will contrast well against both a light and dark background.
+
+### Syntax Highlighting
+
+Syntax highlighting will automatically be applied to code blocks, for example:
+
+```
+def my_function():
+  print("Hello from a function")
+
+my_function()
+```
 
 ## Limitations
 
@@ -82,4 +102,6 @@ With no templating engine in use, and a reliance on Markdown for content creatio
 
 ## TODO
 
+- Syntax highlighting switch for light mode
 - Google Translate popping up?
+- 🌗 in light/dark mode toggle?

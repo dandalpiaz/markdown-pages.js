@@ -102,6 +102,4 @@ With no templating engine in use, and a reliance on Markdown for content creatio
 
 ## TODO
 
-- Syntax highlighting switch for light mode
 - Google Translate popping up?
-- 🌗 in light/dark mode toggle?

@@ -3,9 +3,9 @@
 
 # Markdown Pages - a simple template for Markdown-based sites on GitHub Pages
 
-_`Last Updated: 5/10/2022`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/master/README.md) [`home`](https://dandalpiaz.github.io/)
+_`Last Updated: 7/7/2022`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/master/README.md)
 
-This template allows for the creation of a simple website that utilizes Markdown files for page content. The pages and files in this [GitHub ![GitHub Logo](assets/user/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
+Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/user/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@ This template allows for the creation of a simple website that utilizes Markdown
 
 The purpose of this project was to simplify the creation of a Markdown-based website. There are numerous static site generators (like Jekyll and Hugo) that can use Markdown files for content; however, they require additional backend setup and configuration.
 
-This template is very simple by design - focusing on informational content instead of any special layouts or advanced web elements. Other than GitHub pages, a site will require no other backend components, and the frontend uses just three libraries:
+This template is very simple by design - focusing on informational content instead of any special layouts or advanced web elements. Other than GitHub Pages, a site will require no other backend components, and the frontend uses just three libraries:
 
 - **[Showdown JS](http://showdownjs.com/)** - for the conversion of Markdown to HTML
 - **[Pico CSS](https://picocss.com/)** - to add default styles for the site
@@ -85,7 +85,10 @@ Syntax highlighting will automatically be applied to code blocks, for example:
 
 ```
 def my_function():
-  print("Hello from a function")
+  fruits = ['orange', 'apple', 'pear', 'kiwi', 'banana']
+  for fruit in fruits:
+    if fruit == 'banana':
+        print(fruit)
 
 my_function()
 ```

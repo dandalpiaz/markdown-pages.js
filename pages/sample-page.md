@@ -1,5 +1,5 @@
 
-![markdown logo](assets/markdown.png)
+![markdown logo](assets/user/markdown.svg)
 
 # Markdown Pages - Sample Page
 

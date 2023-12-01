@@ -3,7 +3,7 @@
 
 # Markdown Pages - a simple template for Markdown-based sites on GitHub Pages
 
-_`Last Updated: 7/7/2022`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
+_`Last Updated: 11/30/2023`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
 
 Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/user/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
 
@@ -17,9 +17,9 @@ Create a simple website that utilizes Markdown files for page content. No site g
 
 ## About
 
-The purpose of this project was to simplify the creation of a Markdown-based website. There are numerous static site generators (like Jekyll and Hugo) that can use Markdown files for content; however, they require additional backend setup and configuration.
+With a focus on simple, text-based content, this template aims to simplify the creation of a Markdown-based website. There are numerous static site generators (like Jekyll and Hugo) that can use Markdown files for content; however, they require additional backend setup and configuration. In this case, much of that work is done on the frontend instead. This template can be used anywhere that static files can be hosted - one convenient place to do so is GitHub Pages.
 
-This template is very simple by design - focusing on informational content instead of any special layouts or advanced web elements. Other than GitHub Pages, a site will require no other backend components, and the frontend uses just three libraries:
+Other than a platform/server that hosts files, the site will require no other backend components, and the frontend uses just three libraries:
 
 - **[Showdown JS](http://showdownjs.com/)** - for the conversion of Markdown to HTML
 - **[Pico CSS](https://picocss.com/)** - to add default styles for the site
@@ -67,7 +67,7 @@ Additional pages can be added to the `pages` directory, using Markdown files. To
 Check out the [sample page](?page=sample-page)
 ```
 
-Check out the [sample page](?page=sample-page).
+Check out the [sample page](?page=sample-page) (link will work on the rendered site, not github.com).
 
 ### Assets
 
@@ -105,4 +105,5 @@ With no templating engine in use, and a reliance on Markdown for content creatio
 
 ## TODO
 
+- Escape HTML in code blocks using JavaScript, so that escaped HTML doesn't have to be written in code blocks to render correctly
 - Eliminate 'pages' directory so that GitHub and hosted site can find assets using the same relative paths?

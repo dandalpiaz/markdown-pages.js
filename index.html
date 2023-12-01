@@ -51,20 +51,20 @@
 		}
 
 		/* increase color contrast for a11y */
-		[data-theme="light"] code {
-			color: rgb(80, 105, 115);
-		}
-
-		[data-theme="light"] pre code {
-			color: initial;
-		}
-
 		[data-theme="light"] a {
 			color: #0c779a;
 		}
 
+		[data-theme="light"] code {
+			color: rgb(80, 105, 115);
+		}
+
 		[data-theme="dark"] code {
 			color: rgb(135, 150, 160);
+		}
+
+		[data-theme="light"] pre code {
+			color: initial;
 		}
 
 		[data-theme="dark"] pre code {
@@ -78,19 +78,22 @@
 		[data-theme="dark"] a code {
 			color: #b77a99 !important;
 		}
+
+		[data-theme="light"] .hljs {
+			background: #fcfcfc;
+		}
 		
 		[data-theme="dark"] .hljs {
-			background: rgb(4, 15, 24);
-		}
-
-		[data-theme="dark"] .hljs-comment, .hljs-deletion, .hljs-meta {
-			color: #ccc;
+			background: #0d1418;
 		}
 
 		[data-theme="light"] .hljs-comment, .hljs-deletion, .hljs-meta {
 			color: #555;
 		}
 
+		[data-theme="dark"] .hljs-comment, .hljs-deletion, .hljs-meta {
+			color: #ccc;
+		}
 	</style>
 </head>
 
@@ -106,7 +109,7 @@
 function setHighlightTheme(mode) {
 	var link = document.getElementById('highlight-styles');
 	if (mode == "light") {
-		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-light.min.css'; 
+		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/a11y-light.min.css'; 
 	}
 	if (mode == "dark") {
 		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/monokai-sublime.min.css'; 

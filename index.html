@@ -6,12 +6,13 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Markdown Pages - a simple template for Markdown-based sites on GitHub Pages">
 	<link rel="shortcut icon" type="image/png" href="assets/user/favicon.png"/>
-	<link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.4.4/css/pico.min.css">
-	<script src="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/highlight.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/1.4.4/pico.min.css" integrity="sha512-RAtoAGzPS5T5sUpCfVpkY5EHHDcqEp26rHYNee0Vx4RT1pxJrt3CWQCVD/ekrPdMowT4ybxYvqClqf9v7oWxYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" id="highlight-styles">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js" integrity="sha512-IaaKO80nPNs5j+VLxd42eK/7sYuXQmr+fyywCNA0e+C6gtQnuCXNtORe9xR4LqGPz5U9VpH+ff41wKs/ZmC3iA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<title>Markdown Pages</title>
 	<style>
-		/**** style overrides *****/
+		/**** pico style overrides *****/
 
 		/* link underlines for a11y */
 		a {
@@ -33,22 +34,6 @@
 				padding-right: 16px;
 			}
 		}
-
-		/* increase code color contrast for a11y */
-		code {
-			color: rgb(135, 150, 160);
-		}
-
-		[data-theme="light"] code {
-			color: rgb(100, 125, 135);
-		}
-
-		/* keep link color for code links */
-		a code {
-			color: var(--code-tag-color) !important;
-			font-size: 0.8rem;
-			vertical-align: middle;
-		}
 		
 		/* adjust heading margins */
 		h2 {
@@ -64,10 +49,46 @@
 			font-size: 14px;
 			font-weight: 500;
 		}
+
+		/* increase color contrast for a11y */
+		[data-theme="light"] code {
+			color: rgb(80, 105, 115);
+		}
+
+		[data-theme="light"] pre code {
+			color: initial;
+		}
+
+		[data-theme="light"] a {
+			color: #0c779a;
+		}
+
+		[data-theme="dark"] code {
+			color: rgb(135, 150, 160);
+		}
+
+		[data-theme="dark"] pre code {
+			color: initial;
+		}
+
+		[data-theme="light"] a code {
+			color: #80556b !important;
+		}
+
+		[data-theme="dark"] a code {
+			color: #b77a99 !important;
+		}
 		
-		/* adjust syntax highlighting background */
 		[data-theme="dark"] .hljs {
-			background: rgb(24, 35, 44);
+			background: rgb(4, 15, 24);
+		}
+
+		[data-theme="dark"] .hljs-comment, .hljs-deletion, .hljs-meta {
+			color: #ccc;
+		}
+
+		[data-theme="light"] .hljs-comment, .hljs-deletion, .hljs-meta {
+			color: #555;
 		}
 
 	</style>
@@ -83,17 +104,13 @@
 
 // set syntax highlighting theme based on light or dark mode
 function setHighlightTheme(mode) {
-	var head = document.getElementsByTagName('HEAD')[0];
-	var link = document.createElement('link');
-	link.rel = 'stylesheet'; 
-	link.type = 'text/css';
+	var link = document.getElementById('highlight-styles');
 	if (mode == "light") {
 		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/atom-one-light.min.css'; 
 	}
 	if (mode == "dark") {
 		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/monokai-sublime.min.css'; 
 	}
-	head.appendChild(link);
 }
 
 // toggle between light and dark mode
@@ -102,12 +119,14 @@ function toggleLight() {
 	if (mode == "light") {
 		document.documentElement.setAttribute("data-theme", "dark");
 		document.getElementById('light-toggle').innerHTML = "🌗 Light";
+		document.getElementById('light-toggle').style.color = "#333";
     	localStorage.setItem("mode", "dark");
 		setHighlightTheme("dark");
 	}
 	if (mode == "dark" || mode == null) {
 		document.documentElement.setAttribute("data-theme", "light");
 		document.getElementById('light-toggle').innerHTML = "🌗 Dark";
+		document.getElementById('light-toggle').style.color = "#ddd";
 		localStorage.setItem("mode", "light");
 		setHighlightTheme("light");
 	}
@@ -171,6 +190,7 @@ client.send();
 	if (mode == "light") {
 		document.documentElement.setAttribute("data-theme", "light");
 		document.getElementById('light-toggle').innerHTML = "🌗 Dark";
+		document.getElementById('light-toggle').style.color = "#ddd";
 		setHighlightTheme("light");
 	} else {
 		setHighlightTheme("dark");

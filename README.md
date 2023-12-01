@@ -106,4 +106,3 @@ With no templating engine in use, and a reliance on Markdown for content creatio
 ## TODO
 
 - Eliminate 'pages' directory so that GitHub and hosted site can find assets using the same relative paths?
-- Google Translate popping up?

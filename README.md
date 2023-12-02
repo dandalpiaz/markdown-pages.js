@@ -1,7 +1,7 @@
 
 ![markdown logo](assets/user/markdown.svg)
 
-# Markdown Pages - a simple template for Markdown-based sites on GitHub Pages
+# Markdown Pages - a simple template for Markdown-based sites on GitHub Pages (or other host)
 
 _`Last Updated: 12/1/2023`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
 

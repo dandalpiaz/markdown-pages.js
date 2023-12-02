@@ -3,7 +3,7 @@
 
 # Markdown Pages - a simple template for Markdown-based sites on GitHub Pages
 
-_`Last Updated: 11/30/2023`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
+_`Last Updated: 12/1/2023`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
 
 Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/user/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
 
@@ -17,9 +17,9 @@ Create a simple website that utilizes Markdown files for page content. No site g
 
 ## About
 
-With a focus on simple, text-based content, this template aims to simplify the creation of a Markdown-based website. There are numerous static site generators (like Jekyll and Hugo) that can use Markdown files for content; however, they require additional backend setup and configuration. In this case, much of that work is done on the frontend instead. This template can be used anywhere that static files can be hosted - one convenient place to do so is GitHub Pages.
+With a focus on simple, text-based content, this template aims to simplify the creation of a Markdown-based website. There are numerous static site generators (like Jekyll and Hugo) that can use Markdown files for content; however, they require additional backend setup and configuration. In this case, much of that work is done on the frontend instead. 
 
-Other than a platform/server that hosts files, the site will require no other backend components, and the frontend uses just three libraries:
+This template can be used anywhere that static files can be hosted - one convenient place to do so is GitHub Pages. Other than a platform/server that hosts files, the site will require no other backend components, and the frontend uses just three libraries:
 
 - **[Showdown JS](http://showdownjs.com/)** - for the conversion of Markdown to HTML
 - **[Pico CSS](https://picocss.com/)** - to add default styles for the site
@@ -95,15 +95,13 @@ my_function()
 
 ## Limitations
 
-With no templating engine in use, and a reliance on Markdown for content creation, this project does have a number of limitations:
-
-- **Local Development** - since the site uses XMLHttpRequest to grab content, a local web server will be needed if you want to see things locally, e.g. `python -m http.server`. However, editing directly in GitHub is part of what is convenient about the project.
+- **Local Development** - since the site uses XMLHttpRequest to grab content, a local web server will be needed if you want to test things locally, e.g. `python -m http.server`. However, editing files directly on a server/GitHub is part of the convenience/fun.
 - **Limited element options** - if the element you're trying to use exists in Markdown, the converter should be able to render it as HTML, but this will exclude a lot of more advanced HTML elements.  
-- **No custom layouts** - Markdown used in this way is fairly linear, so you won't be able to do a columns and fancy layouts without a lot of extra work.
-- **No semantic menus/landmarks** - the converter is set to take the Markdown content and place it inside the `main` landmark. Other landmarks aren't currently represented. 
-- **No dynamic/reusable content** - currently no mechanism to reuse content across mulitple pages.
+- **No custom layouts** - Markdown used in this way is fairly linear, so you won't be able to do a columns and fancy layouts without extra work.
 
-## TODO
+## Todo
 
-- Escape HTML in code blocks using JavaScript, so that escaped HTML doesn't have to be written in code blocks to render correctly
-- Eliminate 'pages' directory so that GitHub and hosted site can find assets using the same relative paths?
+- Add a menu and footer section in `index.html` that can be populated from Markdown files?
+- Escape HTML in code blocks using JS, so that this doesn't have to be done in code blocks to render correctly
+- Implement more [Showdown JS options](https://github.com/showdownjs/showdown/wiki/Showdown-Options)
+- Move pages out of 'pages' directory so that GitHub and hosted site can find assets using the same relative paths?

@@ -14,6 +14,7 @@ Create a simple website that utilizes Markdown files for page content. No site g
 - [File Structure](#file-structure)
 - [Styles](#styles)
 - [Limitations](#limitations)
+- [Todo](#todo)
 
 ## About
 

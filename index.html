@@ -19,6 +19,17 @@
 			text-decoration: underline;
 		}
 
+		/* focus indicator */
+		[data-theme="dark"] a:focus {
+			outline: 2px solid rgba(225,225,225,0.3);
+    		border-radius: 2px;
+		}
+
+		[data-theme="light"] a:focus {
+			outline: 2px solid rgba(25,25,25,0.3);
+    		border-radius: 2px;
+		}
+
 		/* adjust contain widths */
 		@media (max-width: 1199px) {
 			.container {

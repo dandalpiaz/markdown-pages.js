@@ -106,3 +106,4 @@ my_function()
 - Escape HTML in code blocks using JS, so that this doesn't have to be done in code blocks to render correctly
 - Implement more [Showdown JS options](https://github.com/showdownjs/showdown/wiki/Showdown-Options)
 - Move pages out of 'pages' directory so that GitHub and hosted site can find assets using the same relative paths?
+- Find/create a classless a11y CSS framework?

@@ -19,15 +19,23 @@
 			text-decoration: underline;
 		}
 
-		/* focus indicator */
+		/* focus indicator for a11y */
 		[data-theme="dark"] a:focus {
-			outline: 2px solid rgba(225,225,225,0.3);
+			outline: 2px solid rgba(225,225,225,0.5);
+    		border-radius: 2px;
+		}
+		
+		[data-theme="light"] a:focus {
+			outline: 2px solid rgba(25,25,25,0.5);
     		border-radius: 2px;
 		}
 
-		[data-theme="light"] a:focus {
-			outline: 2px solid rgba(25,25,25,0.3);
-    		border-radius: 2px;
+		[data-theme="dark"] {
+			--primary-focus: #11191f !important;
+		}
+
+		[data-theme="light"] {
+			--primary-focus: #ffffff !important;
 		}
 
 		/* adjust contain widths */
@@ -177,6 +185,8 @@ client.onreadystatechange = function() {
 			conv.setOption('emoji', 'true');
 			conv.setOption('ghCompatibleHeaderId', 'true');
 			conv.setOption('simpleLineBreaks', 'true');
+			conv.setOption('strikethrough', 'true');
+			conv.setOption('tasklists', 'true');
 			//conv.setOption('parseImgDimensions', 'true');
 			//conv.setOption('ghCodeBlocks', 'true');
 			//conv.setOption('openLinksInNewWindow', 'true');

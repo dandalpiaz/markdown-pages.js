@@ -12,6 +12,7 @@ Create a simple website that utilizes Markdown files for page content. No site g
 - [About](#about)
 - [Getting Started](#getting-started)
 - [File Structure](#file-structure)
+- [Images](#images)
 - [Styles](#styles)
 - [Limitations](#limitations)
 - [Todo](#todo)
@@ -73,6 +74,22 @@ Check out the [sample page](?page=sample-page) (link will work on the rendered s
 ### Assets
 
 Images and other files can be added to the `assets/user` directory and linked as needed. 
+
+## Images
+
+Images can be included with Markdown as they normally are:
+
+```
+![markdown logo](assets/user/markdown.svg)
+```
+
+And image sizing configuration is available through the [parseImgDimensions](https://showdownjs.com/docs/available-options/#parseimgdimensions) option in Showdown JS:
+
+```
+![bar](bar.jpg =100x*)    sets width to 100px and height to "auto"
+![foo](foo.jpg =100x80)   sets width to 100px and height to 80px
+![baz](baz.jpg =80%x5em)  sets width to 80% and height to 5em
+```
 
 ## Styles
 

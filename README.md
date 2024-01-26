@@ -24,7 +24,7 @@ With a focus on simple, text-based content, this template aims to simplify the c
 This template can be used anywhere that static files can be hosted - one convenient place to do so is GitHub Pages. Other than a platform/server that hosts files, the site will require no other backend components, and the frontend uses just three libraries:
 
 - **[Showdown JS](http://showdownjs.com/)** - for the conversion of Markdown to HTML
-- **[Pico CSS](https://picocss.com/)** - to add default styles for the site
+- **[Pico CSS](https://picocss.com/)** - to add (classless) default styles for the site
 - **[Highlight JS](https://highlightjs.org/)** - to add syntax highlighting for code blocks
 
 ## Getting Started 

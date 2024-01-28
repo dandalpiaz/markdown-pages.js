@@ -119,8 +119,9 @@ my_function()
 
 ## Todo
 
-- Add a menu and footer section in `index.html` that can be populated from Markdown files?
+- Add a header/menu and footer section in `index.html` that can be populated from Markdown files?
+- Add a classless CSS theme picker [[1](https://github.com/dohliam/dropin-minimal-css)] [[2](https://github.com/dandalpiaz/classless-css-picker)]
+  - Find/create a classless a11y CSS framework?
 - Escape HTML in code blocks using JS, so that this doesn't have to be done in code blocks to render correctly
 - Implement more [Showdown JS options](https://github.com/showdownjs/showdown/wiki/Showdown-Options)
 - Move pages out of 'pages' directory so that GitHub and hosted site can find assets using the same relative paths?
-- Find/create a classless a11y CSS framework?

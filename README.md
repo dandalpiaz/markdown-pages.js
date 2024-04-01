@@ -119,6 +119,7 @@ my_function()
 
 ## Todo
 
+- Override Pico's `::selection` and `::-moz-selection` values?
 - Find/create a classless a11y CSS framework?
 - Add a header/menu and footer section in `index.html` that can be populated from Markdown files?
 - Escape HTML in code blocks using JS, so that this doesn't have to be done in code blocks to render correctly

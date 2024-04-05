@@ -66,6 +66,10 @@
 			--primary: #13b1e5 !important;
 		}
 
+		#insert a {
+			background-color: transparent;
+		}
+
 		[data-theme="light"] a {
 			color: #0c779a;
 		}
@@ -199,6 +203,12 @@ client.onreadystatechange = function() {
 
 			// apply syntax highlighting for code blocks
 			hljs.highlightAll();
+
+			// jump to anchor if present
+			var hash = window.location.hash;
+			if (hash && document.getElementById(hash.substring(1))) {
+				document.getElementById(hash.substring(1)).scrollIntoView();
+			}
 		}
 	}
 }

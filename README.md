@@ -119,8 +119,11 @@ my_function()
 
 ## Todo
 
-- Find/create a classless a11y CSS framework?
+- Allow HTML to be added/ignored by converter (use innerHTML?), fix `<title>` example
+- Use the user's system theme by default, button can override
+- Set site title, meta description, favicon from a config file?
+- Update docs with a quick start, description (client-side, no build?), deployment options
 - Add a header/menu and footer section in `index.html` that can be populated from Markdown files?
-- Escape HTML in code blocks using JS, so that this doesn't have to be done in code blocks to render correctly
+- Escape HTML in code blocks using JS, so that this doesn't have to be done in code blocks to render correctly?
 - Implement more [Showdown JS options](https://github.com/showdownjs/showdown/wiki/Showdown-Options)
 - Move pages out of 'pages' directory so that GitHub and hosted site can find assets using the same relative paths?

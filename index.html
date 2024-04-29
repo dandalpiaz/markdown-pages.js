@@ -113,6 +113,54 @@
 		[data-theme="dark"] .hljs-comment, .hljs-deletion, .hljs-meta {
 			color: #ccc;
 		}
+
+		/* opinionated / classes */
+		figure {
+			display: inline-block;
+			padding: 5px;
+		}
+
+		[data-theme="light"] figure {
+			border: 1px solid #ccc;
+		}
+
+		[data-theme="dark"] figure {
+			border: 1px solid #333;
+		}
+
+		figcaption {
+			padding: 2px !important;
+			text-align: center;
+			font-size: 16px;
+		}
+
+		.figure-right, .img-right {
+			display: block;
+			float: right;
+			max-width: 50%;
+			padding: 5px;
+			margin-left: 20px;
+			margin-bottom: 15px;
+		}
+
+		.figure-left, .img-left {
+			display: block;
+			float: left;
+			max-width: 50%;
+			padding: 5px;
+			margin-right: 20px;
+			margin-bottom: 15px;
+		}
+
+		@media (max-width: 700px) {
+			.figure-right, .img-right, .figure-left, .img-left {
+				float: none;
+				max-width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+		}
 	</style>
 </head>
 
@@ -132,25 +180,6 @@ function setHighlightTheme(mode) {
 	}
 	if (mode == "dark") {
 		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/monokai-sublime.min.css'; 
-	}
-}
-
-// toggle between light and dark mode
-function toggleLight() {
-	var mode = localStorage.getItem("mode");
-	if (mode == "light") {
-		document.documentElement.setAttribute("data-theme", "dark");
-		document.getElementById('light-toggle').innerHTML = "🌗 Light";
-		document.getElementById('light-toggle').style.color = "#333";
-    	localStorage.setItem("mode", "dark");
-		setHighlightTheme("dark");
-	}
-	if (mode == "dark" || mode == null) {
-		document.documentElement.setAttribute("data-theme", "light");
-		document.getElementById('light-toggle').innerHTML = "🌗 Dark";
-		document.getElementById('light-toggle').style.color = "#ddd";
-		localStorage.setItem("mode", "light");
-		setHighlightTheme("light");
 	}
 }
 
@@ -192,7 +221,7 @@ client.onreadystatechange = function() {
 			//conv.setOption('openLinksInNewWindow', 'true');
 			
 			// convert markdown to HTML
-			document.getElementById('insert').innerHTML = conv.makeHtml(div.textContent);
+			document.getElementById('insert').innerHTML = conv.makeHtml(div.innerHTML);
 
 			// set title as first h1 plus site title
 			var h1s = document.getElementsByTagName("h1");
@@ -214,16 +243,34 @@ client.onreadystatechange = function() {
 }
 client.send();
 
-// get current light/dark mode on page load
-(function () {
+// toggle between light and dark mode
+function toggleLight() {
 	var mode = localStorage.getItem("mode");
 	if (mode == "light") {
+		document.documentElement.setAttribute("data-theme", "dark");
+		document.getElementById('light-toggle').innerHTML = "🌗 Light";
+		document.getElementById('light-toggle').style.color = "#333";
+    	localStorage.setItem("mode", "dark");
+		setHighlightTheme("dark");
+	}
+	if (mode == "dark") {
 		document.documentElement.setAttribute("data-theme", "light");
 		document.getElementById('light-toggle').innerHTML = "🌗 Dark";
 		document.getElementById('light-toggle').style.color = "#ddd";
+		localStorage.setItem("mode", "light");
 		setHighlightTheme("light");
+	}
+}
+
+// get current light/dark mode on page load
+(function () {
+	var mode = localStorage.getItem("mode");
+	if (mode == "light" || (mode == null && window.matchMedia('(prefers-color-scheme: light)').matches)) {
+		localStorage.setItem("mode", "dark");
+		toggleLight();
 	} else {
-		setHighlightTheme("dark");
+		localStorage.setItem("mode", "light");
+		toggleLight();
 	}
 })();
 

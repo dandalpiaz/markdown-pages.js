@@ -3,7 +3,7 @@
 
 # Markdown Pages - a simple template for Markdown-based sites on GitHub Pages (or other host)
 
-_`Last Updated: 12/1/2023`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
+_`Last Updated: 4/29/2024`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
 
 Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/user/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
 
@@ -55,7 +55,7 @@ The `README.md` file will provide the content for the homepage of your site. Sim
 The `index.html` file does the magic of converting Markdown to HTML. It will also look for a heading level 1 (h1) on the current page and prepend it to the site title. You can add your site title by modifying this line in the header:
 
 ```
-&lt;title&gt;Markdown Pages&lt;/title&gt;
+<title>Markdown Pages</title>
 ```
 
 There are other lines in the header that you may want to edit as well, such as the meta description and the favicon image name/location.
@@ -119,11 +119,7 @@ my_function()
 
 ## Todo
 
-- Allow HTML to be added/ignored by converter (use innerHTML?), fix `<title>` example
-- Use the user's system theme by default, button can override
 - Set site title, meta description, favicon from a config file?
-- Update docs with a quick start, description (client-side, no build?), deployment options
+- Update docs - quick start, description/intro (client-side, no-build), deployment options, HTML passthrough, limitations
 - Add a header/menu and footer section in `index.html` that can be populated from Markdown files?
-- Escape HTML in code blocks using JS, so that this doesn't have to be done in code blocks to render correctly?
-- Implement more [Showdown JS options](https://github.com/showdownjs/showdown/wiki/Showdown-Options)
 - Move pages out of 'pages' directory so that GitHub and hosted site can find assets using the same relative paths?

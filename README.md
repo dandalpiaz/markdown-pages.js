@@ -1,11 +1,11 @@
 
-![markdown logo](assets/markdown.svg)
+![markdown logo](assets/images/markdown.svg)
 
 # Markdown Pages - a simple template for Markdown-based sites on GitHub Pages (or other host)
 
 _`Last Updated: 4/29/2024`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
 
-Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
+Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
 
 ## Table of Contents
 
@@ -119,7 +119,9 @@ my_function()
 
 ## Todo
 
-- Set site title, meta description, favicon from a config file?
-- Update docs - quick start, description/intro (client-side, no-build), deployment options, HTML passthrough, limitations
-- Add a header/menu and footer section in `index.html` that can be populated from Markdown files?
-- Move pages out of 'pages' directory so that GitHub and hosted site can find assets using the same relative paths?
+- v2
+  - Set option for syntax highlighting in config
+  - Move dark/light mode button user-scripts.js
+  - Update docs - quick start, description/intro (client-side, no-build), deployment options, HTML passthrough, limitations, how-to update config, pair with classless CSS theme
+  - New name (not just for .md files)
+  - Add a header/menu and footer section in `index.html` that can be populated from Markdown files?

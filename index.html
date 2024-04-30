@@ -1,17 +1,37 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
+	<script>
+		// get config
+		var xhr = new XMLHttpRequest();
+		xhr.open('GET', 'config.json', true);
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState === 4 && xhr.status === 200) {
+				var config = JSON.parse(xhr.responseText);
+				var themeBase = document.createElement("link");
+				themeBase.rel = "stylesheet";
+				themeBase.href = config.siteTheme;
+				document.head.prepend(themeBase);
+				document.title = config.siteTitle;
+				document.querySelector('meta[name="description"]').setAttribute("content", config.siteDescription);
+				document.querySelector("link[rel~='icon']").href = config.siteFavicon;
+			}
+		};
+		xhr.send();
+	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Markdown Pages - a simple template for Markdown-based sites on GitHub Pages">
-	<link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/picocss/1.4.4/pico.min.css" integrity="sha512-RAtoAGzPS5T5sUpCfVpkY5EHHDcqEp26rHYNee0Vx4RT1pxJrt3CWQCVD/ekrPdMowT4ybxYvqClqf9v7oWxYw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="description" content="">
+	<title></title>
+	<link rel="shortcut icon" type="image/png" href=""/>
+	<link rel="stylesheet" href="assets/css/user-styles.css" />
+	<script src="assets/js/showdown.min.js"></script>
+
+	<!-- add to config -->
 	<link rel="stylesheet" id="highlight-styles">
-	<link rel="stylesheet" href="style.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js" integrity="sha512-IaaKO80nPNs5j+VLxd42eK/7sYuXQmr+fyywCNA0e+C6gtQnuCXNtORe9xR4LqGPz5U9VpH+ff41wKs/ZmC3iA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js" integrity="sha512-L03kznCrNOfVxOUovR6ESfCz9Gfny7gihUX/huVbQB9zjODtYpxaVtIaAkpetoiyV2eqWbvxMH9fiSv5enX7bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<title>Markdown Pages</title>
+	<script src="assets/js/highlight.min.js"></script>
+	<!------------------->
 </head>
 
 <body>
@@ -19,6 +39,67 @@
 		<a href="#" role="button" onclick="toggleLight();return false;" id="light-toggle" class="contrast">🌗 Light</a>
 		<div id="insert"></div>
 	</main>
-	<script src="script.js"></script>
+	<script>
+		// helper function to grab query string value
+		function getParameterByName(name, url = window.location.href) {
+			name = name.replace(/[\[\]]/g, '\\$&');
+			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+				results = regex.exec(url);
+			if (!results) return null;
+			if (!results[2]) return '';
+			return decodeURIComponent(results[2].replace(/\+/g, ' '));
+		}
+
+		// build URL for markdown file
+		var page = getParameterByName('page');
+		if (page) {
+			page = "pages/" + page + ".md"
+		} else {
+			page = "README.md";
+		}
+
+		// get page contents
+		var client = new XMLHttpRequest();
+		client.open('GET', page);
+		client.onreadystatechange = function() {
+			if (client.readyState == 4 && client.status == 200) {
+				if (client.responseText) {
+					var div = document.getElementById('insert');
+					div.innerHTML += client.responseText;
+					var conv = new showdown.Converter();
+					conv.setOption('tables', 'true');
+					conv.setOption('emoji', 'true');
+					conv.setOption('ghCompatibleHeaderId', 'true');
+					conv.setOption('simpleLineBreaks', 'true');
+					conv.setOption('strikethrough', 'true');
+					conv.setOption('tasklists', 'true');
+					conv.setOption('parseImgDimensions', 'true');
+					
+					// convert markdown to HTML
+					document.getElementById('insert').innerHTML = conv.makeHtml(div.innerHTML);
+
+					// set page title to first h1 element
+					var h1s = document.getElementsByTagName("h1");
+					for (var i = 0; i < h1s.length; i++) {
+						var h1 = h1s[i];
+						document.title = h1.innerText + " | " + document.title;
+					}
+
+					// apply syntax highlighting for code blocks
+					hljs.highlightAll();
+
+					// jump to anchor if present
+					setTimeout(function () {
+						var hash = window.location.hash;
+						if (hash && document.getElementById(hash.substring(1))) {
+							document.getElementById(hash.substring(1)).scrollIntoView();
+						}			
+					}, 50);
+				}
+			}
+		}
+		client.send();
+	</script>
+	<script src="assets/js/user-scripts.js"></script>
 </body>
 </html>

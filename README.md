@@ -1,11 +1,11 @@
 
-![markdown logo](assets/user/markdown.svg)
+![markdown logo](assets/markdown.svg)
 
 # Markdown Pages - a simple template for Markdown-based sites on GitHub Pages (or other host)
 
 _`Last Updated: 4/29/2024`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
 
-Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/user/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
+Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
 
 ## Table of Contents
 
@@ -73,14 +73,14 @@ Check out the [sample page](?page=sample-page) (link will work on the rendered s
 
 ### Assets
 
-Images and other files can be added to the `assets/user` directory and linked as needed. 
+Images and other files can be added to the `assets` directory and linked as needed. 
 
 ## Images
 
 Images can be included with Markdown as they normally are:
 
 ```
-![markdown logo](assets/user/markdown.svg)
+![markdown logo](assets/markdown.svg)
 ```
 
 And image sizing configuration is available through the [parseImgDimensions](https://showdownjs.com/docs/available-options/#parseimgdimensions) option in Showdown JS:

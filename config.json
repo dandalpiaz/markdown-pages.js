@@ -2,6 +2,7 @@
   "siteTitle": "Markdown Pages",
   "siteDescription": "Markdown Pages - a simple template for Markdown-based sites on GitHub Pages",
   "siteFavicon": "assets/images/favicon.png",
-  "siteTheme": "https://cdnjs.cloudflare.com/ajax/libs/picocss/1.4.4/pico.min.css"
+  "siteTheme": "https://cdnjs.cloudflare.com/ajax/libs/picocss/1.4.4/pico.min.css",
+  "highlightTheme": "https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/a11y-light.min.css"
 }
   

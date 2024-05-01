@@ -120,8 +120,7 @@ my_function()
 ## Todo
 
 - v2
-  - Set option for syntax highlighting in config
-  - Move dark/light mode button user-scripts.js
-  - Update docs - quick start, description/intro (client-side, no-build), deployment options, HTML passthrough, limitations, how-to update config, pair with classless CSS theme
-  - New name (not just for .md files)
-  - Add a header/menu and footer section in `index.html` that can be populated from Markdown files?
+    - Update docs - quick start, description/intro (no-install/command line, buildless, serverless, uses client-side), deployment options, HTML passthrough, limitations (URLs), how to update config, pair with classless CSS theme, add JS to logo?
+    - Add a header/menu and footer section in `index.html` that can be populated from Markdown files
+    - Create a single JS file that could be used as an include? Wouldn't need config part?
+        - markdown-pages.js - Markdown-based static sites, without the generator

@@ -1,6 +1,13 @@
 
 /**** pico style overrides *****/
 
+/* font size */
+@media (min-width: 1200px) {
+    :root {
+        --font-size: 19px;
+    }
+}
+
 /* link underlines for a11y */
 a {
     text-decoration: underline;
@@ -148,3 +155,13 @@ figcaption {
         text-align: center;
     }
 }
+
+/*
+position: absolute;
+top: 7px;
+right: 50%;
+transform: translate(50%, 0px);
+font-size: 15px;
+font-weight: 500;
+color: #888;
+*/

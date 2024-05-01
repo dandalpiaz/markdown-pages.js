@@ -31,6 +31,14 @@ function toggleLight() {
 
 // get current light/dark mode on page load
 (function () {
+	var lightToggle = document.createElement("a");
+	lightToggle.href = "#";
+	lightToggle.role = "button";
+	lightToggle.onclick = function() {toggleLight();return false;};
+	lightToggle.id = "light-toggle";
+	lightToggle.className = "contrast";
+	lightToggle.innerHTML = "🌗 Light"
+	document.body.prepend(lightToggle);
 	var mode = localStorage.getItem("mode");
 	if (mode == "light" || (mode == null && window.matchMedia('(prefers-color-scheme: light)').matches)) {
 		localStorage.setItem("mode", "dark");

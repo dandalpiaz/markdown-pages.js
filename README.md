@@ -1,5 +1,5 @@
 
-![markdown logo](assets/images/mdp.svg =190x*)
+![markdown logo](assets/images/mdp.svg)
 
 # markdown-pages.js - _simple Markdown-based static sites, without the generator_
 
@@ -75,4 +75,4 @@ The example site includes styles from the [Pico CSS](https://picocss.com/) frame
 
 ## Todo
 
-- Rename repo, replace CDN link
+- Rename repo, test CDN link

@@ -24,8 +24,6 @@ script.onload = function() {
     client.onreadystatechange = function() {
         if (client.readyState == 4 && client.status == 200) {
             if (client.responseText) {
-                var div = document.getElementById('insert');
-                div.innerHTML += client.responseText;
                 var conv = new showdown.Converter();
                 conv.setOption('tables', 'true');
                 conv.setOption('emoji', 'true');
@@ -34,7 +32,7 @@ script.onload = function() {
                 conv.setOption('strikethrough', 'true');
                 conv.setOption('tasklists', 'true');
                 conv.setOption('parseImgDimensions', 'true');
-                document.getElementById('insert').innerHTML = conv.makeHtml(div.innerHTML);
+                document.querySelector('main').innerHTML = conv.makeHtml(client.responseText);
                 var h1 = document.querySelector('h1');
                 if (h1) {
                     document.title = h1.innerText + " | " + document.title;

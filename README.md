@@ -1,9 +1,9 @@
 
 ![markdown logo](assets/images/markdown.svg)
 
-# Markdown Pages - a simple template for Markdown-based sites on GitHub Pages (or other host)
+# markdown-pages.js - Markdown-based static sites, without the generator
 
-_`Last Updated: 4/29/2024`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
+_`Last Updated: 5/1/2024`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
 
 Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
 
@@ -119,8 +119,6 @@ my_function()
 
 ## Todo
 
-- v2
-    - Update docs - quick start, description/intro (no-install/command line, buildless, serverless, uses client-side), deployment options, HTML passthrough, limitations (URLs), how to update config, pair with classless CSS theme, add JS to logo?
-    - Add a header/menu and footer section in `index.html` that can be populated from Markdown files
-    - Create a single JS file that could be used as an include? Wouldn't need config part?
-        - markdown-pages.js - Markdown-based static sites, without the generator
+- markdown-pages.js - Markdown-based static sites, without the generator
+- Update docs - quick start (JS file to CDN?), description/intro (no-install/command line, buildless, serverless, uses client-side), deployment options, HTML passthrough, limitations (URLs), how to update config, pair with classless CSS theme, add JS to logo?
+- Add a header/menu and footer section in `index.html` that can be populated from Markdown files

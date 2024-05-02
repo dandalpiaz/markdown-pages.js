@@ -1,69 +1,44 @@
 
 ![markdown logo](assets/images/markdown.svg)
 
-# markdown-pages.js - Markdown-based static sites, without the generator
+# markdown-pages.js - _simple Markdown-based static sites, without the generator_
 
 _`Last Updated: 5/1/2024`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
 
-Create a simple website that utilizes Markdown files for page content. No site generator necessary. Edit directly on GitHub! The pages and files in the [GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages) are rendered on [this website](https://dandalpiaz.github.io/markdown-pages) via GitHub Pages. 
+Use **markdown-pages.js** to create simple websites using [Markdown](https://www.markdownguide.org/basic-syntax/) files for page content. No site generator necessary - no build process, installs, etc. Client side JavaScript handles the Markdown to HTML conversion. Content files can be edited directly where they are hosted! Check out the [GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages)!
 
 ## Table of Contents
 
-- [About](#about)
-- [Getting Started](#getting-started)
-- [File Structure](#file-structure)
-- [Images](#images)
-- [Styles](#styles)
+- [Quick Start](#quick-start)
+- [Markdown Options](#markdown-options)
+- [Deployment Options](#deployment-options)
+- [User Styles & Scripts](#user-styles--scripts)
 - [Limitations](#limitations)
 - [Todo](#todo)
 
-## About
+## Quick Start
 
-With a focus on simple, text-based content, this template aims to simplify the creation of a Markdown-based website. There are numerous static site generators (like Jekyll and Hugo) that can use Markdown files for content; however, they require additional backend setup and configuration. In this case, much of that work is done on the frontend instead. 
-
-This template can be used anywhere that static files can be hosted - one convenient place to do so is GitHub Pages. Other than a platform/server that hosts files, the site will require no other backend components, and the frontend uses just three libraries:
-
-- **[Showdown JS](http://showdownjs.com/)** - for the conversion of Markdown to HTML
-- **[Pico CSS](https://picocss.com/)** - to add (classless) default styles for the site
-- **[Highlight JS](https://highlightjs.org/)** - to add syntax highlighting for code blocks
-
-## Getting Started 
-
-To set up a site, simply fork or copy the files from the [markdown-pages repository](https://github.com/dandalpiaz/markdown-pages) into your own repo, and then enable GitHub pages for your repository. Steps 2 and 3 in this [Quickstart for GitHub Pages](https://docs.github.com/en/pages/quickstart) show how this is done in the interface. Other steps can be ignored.
-
-## File Structure
+To use the library, simply add the JavaScript file in the `<head>` section of your `index.html` file and create blank `<header>`, `<main>`, and `<footer>` elements.
 
 ```
-markdown-pages/
-|---assets/
-|------user/
-|	   |---favicon.png
-|	   |---example.png
-|---pages/
-|	|---sample-page.md
-|	|---sample-page-2.md
-|---index.html
-|---README.md
+<!doctype html>
+<html lang="en">
+
+<head>
+  ...
+  ...
+  <script src="markdown-pages.js"></script>
+</head>
+
+<body>
+	<header></header>
+	<main></main>
+	<footer></footer>
+</body>
+</html>
 ```
 
-### README.md
-
-The `README.md` file will provide the content for the homepage of your site. Simply author the file using [Markdown syntax](https://www.markdownguide.org/basic-syntax/).
-
-### index.html
-
-The `index.html` file does the magic of converting Markdown to HTML. It will also look for a heading level 1 (h1) on the current page and prepend it to the site title. You can add your site title by modifying this line in the header:
-
-```
-<title>Markdown Pages</title>
-```
-
-There are other lines in the header that you may want to edit as well, such as the meta description and the favicon image name/location.
-
-
-### Pages
-
-Additional pages can be added to the `pages` directory, using Markdown files. To add a link to an additional page, for example, `sample-page.md`, the following link structure can be used: 
+You can start from a fork of the [markdown-pages.js repository](https://github.com/dandalpiaz/markdown-pages), or, use the CDN link for the JavaScript file like above. The library will use the `README.md` file for the homepage content. Other pages should be stored in a `pages` directory. For example, a file at `pages/sample-page.md` can be linked to as follows:
 
 ```
 Check out the [sample page](?page=sample-page)
@@ -71,19 +46,11 @@ Check out the [sample page](?page=sample-page)
 
 Check out the [sample page](?page=sample-page) (link will work on the rendered site, not github.com).
 
-### Assets
+## Markdown Options
 
-Images and other files can be added to the `assets` directory and linked as needed. 
+tbd - link to showdown.js and other options
 
-## Images
-
-Images can be included with Markdown as they normally are:
-
-```
-![markdown logo](assets/markdown.svg)
-```
-
-And image sizing configuration is available through the [parseImgDimensions](https://showdownjs.com/docs/available-options/#parseimgdimensions) option in Showdown JS:
+Images can be included with Markdown as they normally are and image sizing configuration is available through the [parseImgDimensions](https://showdownjs.com/docs/available-options/#parseimgdimensions) option in Showdown JS:
 
 ```
 ![bar](bar.jpg =100x*)    sets width to 100px and height to "auto"
@@ -91,15 +58,15 @@ And image sizing configuration is available through the [parseImgDimensions](htt
 ![baz](baz.jpg =80%x5em)  sets width to 80% and height to 5em
 ```
 
-## Styles
+## Deployment Options
 
-### Dark/Light Mode
+- **AWS s3 Bucket** - tbd
+- **Traditional server** - tbd
+- **GitHub Pages** - Steps 2 and 3 in this [Quickstart for GitHub Pages](https://docs.github.com/en/pages/quickstart) show how this is done in the interface. Other steps can be ignored.
 
-The site will include a dark/light mode toggle button by default. When adding images to a page, consider adding images that will contrast well against both a light and dark background.
+## User Styles & Scripts
 
-### Syntax Highlighting
-
-Syntax highlighting will automatically be applied to code blocks, for example:
+The example site includes styles from the [Pico CSS](tbd) framework and some custom styles via a `user-styles.css` file. This and [other classless CSS frameworks](tbd) work well with Markdown content. The example site also includes a dark/light mode toggle and code syntax highlighting via a `user-scripts.js` file. Example code highlighting:
 
 ```
 def my_function():
@@ -113,12 +80,15 @@ my_function()
 
 ## Limitations
 
-- **Local Development** - since the site uses XMLHttpRequest to grab content, a local web server will be needed if you want to test things locally, e.g. `python -m http.server`. However, editing files directly on a server/GitHub is part of the convenience/fun.
-- **Limited element options** - if the element you're trying to use exists in Markdown, the converter should be able to render it as HTML, but this will exclude a lot of more advanced HTML elements.  
-- **No custom layouts** - Markdown used in this way is fairly linear, so you won't be able to do a columns and fancy layouts without extra work.
+- **URL Structure** - since all work is done on the client side, with the `index.html` file, a nested URL structure (e.g. /directory1/directory2/page) is not possible. Instead pages are referenced by a query parameter (/?page=file-name).
+- **Local Development** - since the site uses XMLHttpRequest to grab content, a local web server will be needed if you want to test things locally, e.g. `python -m http.server`. However, editing hosted files directly is part of the convenience/fun. 
+- **Custom layouts** - Markdown used in this way is fairly linear, so you won't be able to do a columns and fancy layouts without extra work.
 
 ## Todo
 
-- markdown-pages.js - Markdown-based static sites, without the generator
-- Update docs - quick start (JS file to CDN?), description/intro (no-install/command line, buildless, serverless, uses client-side), deployment options, HTML passthrough, limitations (URLs), how to update config, pair with classless CSS theme, add JS to logo?
+- Add initial landmark elements through `markdown-pages.js`
+- JS file to CDN?
+- Add ' + JS' to logo?
+- Fix up docs - see tbd sections, HTML passthrough
+    - It will also look for a heading level 1 (h1) on the current page and prepend it to the site title. 
 - Add a header/menu and footer section in `index.html` that can be populated from Markdown files

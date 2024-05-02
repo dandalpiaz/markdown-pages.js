@@ -6,7 +6,7 @@ function setHighlightTheme(mode) {
 		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/a11y-light.min.css'; 
 	}
 	if (mode == "dark") {
-		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/monokai-sublime.min.css'; 
+		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/vs2015.min.css'; 
 	}
 	setTimeout(function () {
 		hljs.highlightAll();		

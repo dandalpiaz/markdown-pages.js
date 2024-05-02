@@ -49,4 +49,42 @@ script.onload = function() {
         }
     }
     client.send();
+
+    var client1 = new XMLHttpRequest();
+    client1.open('GET', "header.md");
+    client1.onreadystatechange = function() {
+        if (client1.readyState == 4 && client1.status == 200) {
+            if (client1.responseText) {
+                var conv = new showdown.Converter();
+                conv.setOption('tables', 'true');
+                conv.setOption('emoji', 'true');
+                conv.setOption('ghCompatibleHeaderId', 'true');
+                conv.setOption('simpleLineBreaks', 'true');
+                conv.setOption('strikethrough', 'true');
+                conv.setOption('tasklists', 'true');
+                conv.setOption('parseImgDimensions', 'true');
+                document.querySelector('header').innerHTML = conv.makeHtml(client1.responseText);                
+            }
+        } 
+    }
+    client1.send();
+
+    var client2 = new XMLHttpRequest();
+    client2.open('GET', "footer.md");
+    client2.onreadystatechange = function() {
+        if (client2.readyState == 4 && client2.status == 200) {
+            if (client2.responseText) {
+                var conv = new showdown.Converter();
+                conv.setOption('tables', 'true');
+                conv.setOption('emoji', 'true');
+                conv.setOption('ghCompatibleHeaderId', 'true');
+                conv.setOption('simpleLineBreaks', 'true');
+                conv.setOption('strikethrough', 'true');
+                conv.setOption('tasklists', 'true');
+                conv.setOption('parseImgDimensions', 'true');
+                document.querySelector('footer').innerHTML = conv.makeHtml(client2.responseText);                
+            }
+        } 
+    }
+    client2.send();
 };

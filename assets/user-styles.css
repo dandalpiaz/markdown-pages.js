@@ -3,10 +3,31 @@
 
 /**** pico style overrides *****/
 
-/* header / footer */
-
+/* header and footer */
 header, footer {
     padding: 0px !important;
+}
+
+header p, footer p {
+    margin: 0px;
+    position: absolute;
+    right: 50%;
+    transform: translate(50%, 0px);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+header p {
+    top: 7px;
+}
+
+footer p {
+    padding-bottom: 7px;
+}
+
+header a, footer a {
+    color: #888 !important;
+    text-decoration: none;
 }
 
 /* font size */
@@ -53,11 +74,16 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
+/* adjust code */
+code {
+    margin-top: 2px;
+}
+
 /* dark/light mode toggle button */
 #light-toggle {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 8px;
+    right: 8px;
     padding: 5px;
     font-size: 14px;
     font-weight: 500;
@@ -68,7 +94,7 @@ h2 {
     --primary: #13b1e5 !important;
 }
 
-#insert a {
+a {
     background-color: transparent;
 }
 
@@ -81,7 +107,7 @@ h2 {
 }
 
 [data-theme="dark"] code {
-    color: rgb(135, 150, 160);
+    color: rgb(155, 170, 170);
 }
 
 [data-theme="light"] pre code {
@@ -163,13 +189,3 @@ figcaption {
         text-align: center;
     }
 }
-
-/*
-position: absolute;
-top: 7px;
-right: 50%;
-transform: translate(50%, 0px);
-font-size: 15px;
-font-weight: 500;
-color: #888;
-*/

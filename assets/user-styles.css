@@ -1,5 +1,13 @@
 
+@import url("https://cdnjs.cloudflare.com/ajax/libs/picocss/1.4.4/pico.min.css");
+
 /**** pico style overrides *****/
+
+/* header / footer */
+
+header, footer {
+    padding: 0px !important;
+}
 
 /* font size */
 @media (min-width: 1200px) {
@@ -108,7 +116,7 @@ h2 {
     color: #ccc;
 }
 
-/* opinionated / classes */
+/* non-md elements / classes */
 figure {
     display: inline-block;
     padding: 5px;

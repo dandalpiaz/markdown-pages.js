@@ -2,91 +2,22 @@
 <html lang="en">
 
 <head>
-	<script>
-		var xhr = new XMLHttpRequest();
-		xhr.open('GET', 'config.json', true);
-		xhr.onreadystatechange = function () {
-			if (xhr.readyState === 4 && xhr.status === 200) {
-				var config = JSON.parse(xhr.responseText);
-				var themeBase = document.createElement("link");
-				themeBase.rel = "stylesheet";
-				themeBase.href = config.siteTheme;
-				document.head.prepend(themeBase);
-				document.title = config.siteTitle;
-				document.querySelector('meta[name="description"]').setAttribute("content", config.siteDescription);
-				document.querySelector("link[rel~='icon']").href = config.siteFavicon;
-				var h1css = document.getElementById('highlight-styles');
-				h1css.href = config.highlightTheme;
-			}
-		};
-		xhr.send();
-	</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<title></title>
-	<link rel="shortcut icon" type="image/png" href=""/>
-	<link rel="stylesheet" href="assets/css/user-styles.css" />
-	<link rel="stylesheet" id="highlight-styles">
-	<script src="assets/js/showdown.min.js"></script>
-	<script src="assets/js/highlight.min.js"></script>
+	<meta name="description" content="Markdown Pages - a simple template for Markdown-based sites on GitHub Pages">
+	<title>Markdown Pages</title>
+	<link rel="shortcut icon" type="image/png" href="assets/images/favicon.png"/>
+	<link rel="stylesheet" href="assets/user-styles.css" />
+	<!---- adding markdown-page.js file ---->
+	<script src="markdown-pages.js"></script>
 </head>
 
 <body>
+	<header></header>
 	<main role="main" class="container">
-		<div id="insert"></div>
+		<div id="insert"></div> <!--######### move to JS #########-->
 	</main>
-	<script>
-		function getParameterByName(name, url = window.location.href) {
-			name = name.replace(/[\[\]]/g, '\\$&');
-			var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-				results = regex.exec(url);
-			if (!results) return null;
-			if (!results[2]) return '';
-			return decodeURIComponent(results[2].replace(/\+/g, ' '));
-		}
-
-		var page = getParameterByName('page');
-		if (page) {
-			page = "pages/" + page + ".md"
-		} else {
-			page = "README.md"; // or index.md
-		}
-
-		var client = new XMLHttpRequest();
-		client.open('GET', page);
-		client.onreadystatechange = function() {
-			if (client.readyState == 4 && client.status == 200) {
-				if (client.responseText) {
-					var div = document.getElementById('insert');
-					div.innerHTML += client.responseText;
-					var conv = new showdown.Converter();
-					conv.setOption('tables', 'true');
-					conv.setOption('emoji', 'true');
-					conv.setOption('ghCompatibleHeaderId', 'true');
-					conv.setOption('simpleLineBreaks', 'true');
-					conv.setOption('strikethrough', 'true');
-					conv.setOption('tasklists', 'true');
-					conv.setOption('parseImgDimensions', 'true');
-					document.getElementById('insert').innerHTML = conv.makeHtml(div.innerHTML);
-					var h1 = document.querySelector('h1');
-					if (h1) {
-						document.title = h1.innerText + " | " + document.title;
-					}
-					hljs.highlightAll();
-					setTimeout(function () {
-						var hash = window.location.hash;
-						if (hash && document.getElementById(hash.substring(1))) {
-							document.getElementById(hash.substring(1)).scrollIntoView();
-						}			
-					}, 50);
-				}
-			} else if (client.status == 404) {
-				window.location.href = '404.html';
-			}
-		}
-		client.send();
-	</script>
-	<script src="assets/js/user-scripts.js"></script>
+	<footer></footer>
+	<script src="assets/user-scripts.js"></script>
 </body>
 </html>

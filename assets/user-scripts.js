@@ -8,6 +8,9 @@ function setHighlightTheme(mode) {
 	if (mode == "dark") {
 		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/monokai-sublime.min.css'; 
 	}
+	setTimeout(function () {
+		hljs.highlightAll();		
+	}, 100);
 }
 
 // toggle between light and dark mode
@@ -39,6 +42,16 @@ function toggleLight() {
 	lightToggle.className = "contrast";
 	lightToggle.innerHTML = "🌗 Light"
 	document.body.prepend(lightToggle);
+
+	var hljs = document.createElement('script');
+	hljs.src = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js';
+	document.head.appendChild(hljs);
+
+	var h1css = document.createElement('link');
+	h1css.rel = 'stylesheet';
+	h1css.id = 'highlight-styles';
+	document.head.appendChild(h1css);
+
 	var mode = localStorage.getItem("mode");
 	if (mode == "light" || (mode == null && window.matchMedia('(prefers-color-scheme: light)').matches)) {
 		localStorage.setItem("mode", "dark");

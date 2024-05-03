@@ -24,8 +24,7 @@ To use the library, simply add the JavaScript file in the `<head>` section of yo
 <html lang="en">
 <head>
   ...
-  ...
-  <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@main/markdown-pages.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.0/markdown-pages.js"></script>
 </head>
 <body>
 	<header></header><!-- optional -->
@@ -72,7 +71,3 @@ The example site includes styles from the [Pico CSS](https://picocss.com/) frame
 - **URL Structure** - since all work is done on the client side with the `index.html` file, a nested URL structure (e.g. /directory1/directory2/page) is not possible. Instead pages are referenced by a query parameter (/?page=file-name).
 - **Local Development** - since the site uses XMLHttpRequest to grab content, a local web server will be needed if you want to test things locally, e.g. `python -m http.server`. However, editing hosted files directly is part of the convenience/fun. 
 - **Custom layouts** - Markdown used in this way is fairly linear, so custom layouts won't be possible without adding additional HTML in the pages.
-
-## Todo
-
-- Rename repo, test CDN link

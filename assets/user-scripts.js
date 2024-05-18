@@ -10,7 +10,7 @@ function setHighlightTheme(mode) {
 	}
 	setTimeout(function () {
 		hljs.highlightAll();		
-	}, 100);
+	}, 175);
 }
 
 // toggle between light and dark mode

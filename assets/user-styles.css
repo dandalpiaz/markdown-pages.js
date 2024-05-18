@@ -25,11 +25,6 @@ footer p {
     padding-bottom: 7px;
 }
 
-header a, footer a {
-    color: #888 !important;
-    text-decoration: none;
-}
-
 /* font size */
 @media (min-width: 1200px) {
     :root {

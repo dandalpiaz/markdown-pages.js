@@ -3,7 +3,7 @@
 
 # markdown-pages.js - _simple Markdown-based static sites, without the generator_
 
-_`Last Updated: 5/1/2024`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
+_`Last Updated: 6/2/2024`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md)
 
 Use **markdown-pages.js** to create simple websites using [Markdown](https://www.markdownguide.org/basic-syntax/) files for page content. No site generator necessary - no build process, installs, etc. Client side JavaScript handles the Markdown to HTML conversion. Content files can be edited directly where they are hosted! Check out the **[GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages)**!
 
@@ -60,7 +60,7 @@ conv.setOption('parseImgDimensions', 'true');
 
 ## Deployment
 
-The library can be used anywhere that web files are hosted - a traditional server, an object storage bucket like AWS s3, etc. Part of the aim of this project was to avoid the dependency of a static site generator, but [GitHub Pages](https://docs.github.com/en/pages/quickstart) remains a convenient option to host files. 
+The library can be used anywhere that web files are hosted - a traditional server, an object storage bucket like AWS s3, etc. Part of the aim of this project was to avoid the dependency of a static site generator, but [GitHub Pages](https://docs.github.com/en/pages/quickstart) remains a convenient option to host static files. [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/) also offers no-cost static file hosting.
 
 ## User Styles & Scripts
 

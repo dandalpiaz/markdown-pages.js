@@ -3,7 +3,7 @@
 
 # markdown-pages.js - _simple Markdown-based static sites, without the generator_
 
-Use **markdown-pages.js** to create simple websites using [Markdown](https://www.markdownguide.org/basic-syntax/) files for page content. No site generator necessary - no build process, installs, etc. Client-side JavaScript fetchs the Markdown files and handles the conversion to HTML. Content files can be edited directly where they are hosted! Check out the **[GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages)**!
+Use **markdown-pages.js** to create simple websites using [Markdown](https://www.markdownguide.org/basic-syntax/) files for page content. No site generator necessary - no build process, installs, etc. Client-side JavaScript fetches the Markdown files and handles the conversion to HTML. Content files can be edited directly where they are hosted! Check out the **[GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages)**!
 
 ## Table of Contents
 

@@ -22,7 +22,7 @@ To use the library, simply add the JavaScript file in the `<head>` section of yo
 <html lang="en">
 <head>
   ...
-  <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.0/markdown-pages.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.0/markdown-pages.min.js"></script>
 </head>
 <body>
 	<header></header><!-- optional -->

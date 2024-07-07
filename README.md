@@ -28,11 +28,9 @@ To use the library, simply add the JavaScript file in the `<head>` section of yo
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.0/assets/user-styles.min.css">
 </head>
 <body>
-	<header></header><!-- optional -->
-
+	<header></header>
 	<main></main>
-	
-	<footer></footer><!-- optional -->
+	<footer></footer>
 
 	<!-- load optional user scripts -->
 	<script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.0/assets/user-scripts.min.js"></script>

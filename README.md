@@ -21,13 +21,21 @@ To use the library, simply add the JavaScript file in the `<head>` section of yo
 <!doctype html>
 <html lang="en">
 <head>
-  ...
+  <!-- load main JS file -->
   <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.0/markdown-pages.min.js"></script>
+
+  <!-- load optional user styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.0/assets/user-styles.min.css">
 </head>
 <body>
 	<header></header><!-- optional -->
+
 	<main></main>
+	
 	<footer></footer><!-- optional -->
+
+	<!-- load optional user scripts -->
+	<script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.0/assets/user-scripts.min.js"></script>
 </body>
 </html>
 ```

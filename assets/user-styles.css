@@ -76,6 +76,7 @@ code {
 
 pre {
     white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 /* dark/light mode toggle button */

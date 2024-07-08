@@ -74,6 +74,10 @@ code {
     margin-top: 2px;
 }
 
+pre {
+    white-space: pre-wrap;
+}
+
 /* dark/light mode toggle button */
 #light-toggle {
     position: absolute;

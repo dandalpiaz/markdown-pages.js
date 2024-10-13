@@ -75,3 +75,8 @@ The example site includes styles from the [Pico CSS](https://picocss.com/) frame
 - **URL Structure** - since all work is done on the client side with the `index.html` file, a nested URL structure (e.g. /directory1/directory2/page) is not possible. Instead pages are referenced by a query parameter (/?page=file-name).
 - **Local Development** - since the site uses XMLHttpRequest to grab content, a local web server will be needed if you want to test things locally, e.g. `python -m http.server`. However, editing hosted files directly is part of the convenience/fun. 
 - **Custom layouts** - Markdown used in this way is fairly linear, so custom layouts won't be possible without adding additional HTML in the pages.
+
+## Todo
+
+- Add YAML frontmatter to pages and parse with [gray-matter](https://github.com/jonschlinkert/gray-matter/tree/master) (added via CDN) to give options for things like choosing a layout template for each page.
+- Parse layouts for file includes, e.g. `{% include 'filename' %}` so that resuable sections can be defined.

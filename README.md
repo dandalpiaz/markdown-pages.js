@@ -78,5 +78,6 @@ The example site includes styles from the [Pico CSS](https://picocss.com/) frame
 
 ## Todo
 
-- Add YAML frontmatter to pages and parse with [gray-matter](https://github.com/jonschlinkert/gray-matter/tree/master) (added via CDN) to give options for things like choosing a layout template for each page.
+- Add YAML front matter to pages and parse with [gray-matter](https://github.com/jonschlinkert/gray-matter/tree/master) (added via CDN) to give options for things like choosing a layout template for each page.
 - Parse layouts for file includes, e.g. `{% include 'filename' %}` so that resuable sections can be defined.
+- Test with [Decap CMS](https://decapcms.org/)

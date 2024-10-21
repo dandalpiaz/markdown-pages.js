@@ -14,9 +14,9 @@ script.onload = function() {
 
     var page = getParameterByName('page');
     if (page) {
-        page = "pages/" + page + ".md"
+        page = "_pages/" + page + ".md"
     } else {
-        page = "README.md"; // or index.md ???
+        page = "_pages/index.md"; // or index.md ???
     }
 
     var client = new XMLHttpRequest();
@@ -32,7 +32,46 @@ script.onload = function() {
                 conv.setOption('strikethrough', 'true');
                 conv.setOption('tasklists', 'true');
                 conv.setOption('parseImgDimensions', 'true');
-                document.querySelector('main').innerHTML = conv.makeHtml(client.responseText);
+
+                // get layout fom front matter
+                var layout = client.responseText.match(/layout: (.*)/);
+                if (layout) {
+                    layout = layout[1];
+                } else {
+                    layout = "default";
+                }
+                
+                // load layout
+                var client1 = new XMLHttpRequest();
+                client1.open('GET', "_layouts/" + layout + ".html");
+                client1.onreadystatechange = function() {
+                    if (client1.readyState == 4 && client1.status == 200) {
+                        if (client1.responseText) {
+                            var layout = client1.responseText.replace("{{ content }}", conv.makeHtml(client.responseText));
+                            document.body.innerHTML = layout;
+
+                            // find instances of {% include file.html %} in layout
+                            var includes = layout.match(/{% include (.*) %}/g);
+                            if (includes) {
+                                includes.forEach(function (include) {
+                                    var file = "_includes/" + include.match(/{% include (.*) %}/)[1];
+                                    var client2 = new XMLHttpRequest();
+                                    client2.open('GET', file);
+                                    client2.onreadystatechange = function() {
+                                        if (client2.readyState == 4 && client2.status == 200) {
+                                            if (client2.responseText) {
+                                                document.body.innerHTML = document.body.innerHTML.replace(include, client2.responseText);
+                                            }
+                                        }
+                                    }
+                                    client2.send();
+                                });
+                            }
+                        }
+                    }
+                }
+                client1.send();
+
                 var h1 = document.querySelector('h1');
                 if (h1) {
                     document.title = h1.innerText + " | " + document.title;
@@ -50,41 +89,4 @@ script.onload = function() {
     }
     client.send();
 
-    var client1 = new XMLHttpRequest();
-    client1.open('GET', "header.md");
-    client1.onreadystatechange = function() {
-        if (client1.readyState == 4 && client1.status == 200) {
-            if (client1.responseText) {
-                var conv = new showdown.Converter();
-                conv.setOption('tables', 'true');
-                conv.setOption('emoji', 'true');
-                conv.setOption('ghCompatibleHeaderId', 'true');
-                conv.setOption('simpleLineBreaks', 'true');
-                conv.setOption('strikethrough', 'true');
-                conv.setOption('tasklists', 'true');
-                conv.setOption('parseImgDimensions', 'true');
-                document.querySelector('header').innerHTML = conv.makeHtml(client1.responseText);                
-            }
-        } 
-    }
-    client1.send();
-
-    var client2 = new XMLHttpRequest();
-    client2.open('GET', "footer.md");
-    client2.onreadystatechange = function() {
-        if (client2.readyState == 4 && client2.status == 200) {
-            if (client2.responseText) {
-                var conv = new showdown.Converter();
-                conv.setOption('tables', 'true');
-                conv.setOption('emoji', 'true');
-                conv.setOption('ghCompatibleHeaderId', 'true');
-                conv.setOption('simpleLineBreaks', 'true');
-                conv.setOption('strikethrough', 'true');
-                conv.setOption('tasklists', 'true');
-                conv.setOption('parseImgDimensions', 'true');
-                document.querySelector('footer').innerHTML = conv.makeHtml(client2.responseText);                
-            }
-        } 
-    }
-    client2.send();
 };

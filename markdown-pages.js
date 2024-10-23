@@ -16,7 +16,7 @@ script.onload = function() {
     if (page) {
         page = "_pages/" + page + ".md"
     } else {
-        page = "_pages/index.md"; // or index.md ???
+        page = "README.md"; // or index.md ???
     }
 
     var client = new XMLHttpRequest();
@@ -47,8 +47,8 @@ script.onload = function() {
                 client1.onreadystatechange = function() {
                     if (client1.readyState == 4 && client1.status == 200) {
                         if (client1.responseText) {
-                            var layout = client1.responseText.replace("{{ content }}", conv.makeHtml(client.responseText));
-                            document.body.innerHTML = layout;
+                            var layout = client1.responseText.replace("{{ content }}", conv.makeHtml(client.responseText.replace(/---([\s\S]*?)---/, '')));
+                            output = layout;
 
                             // find instances of {% include file.html %} in layout
                             var includes = layout.match(/{% include (.*) %}/g);
@@ -60,7 +60,8 @@ script.onload = function() {
                                     client2.onreadystatechange = function() {
                                         if (client2.readyState == 4 && client2.status == 200) {
                                             if (client2.responseText) {
-                                                document.body.innerHTML = document.body.innerHTML.replace(include, client2.responseText);
+                                                output = output.replace(include, client2.responseText);
+                                                document.body.innerHTML = output;
                                             }
                                         }
                                     }
@@ -68,7 +69,7 @@ script.onload = function() {
                                 });
                             }
                         }
-                    }
+                    }    
                 }
                 client1.send();
 

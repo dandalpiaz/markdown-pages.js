@@ -33,9 +33,7 @@ function toggleLight() {
 }
 
 // get current light/dark mode on page load
-(function () {
-	document.querySelector('main').className = "container";
-
+setTimeout(function () {
 	var lightToggle = document.createElement("a");
 	lightToggle.href = "#";
 	lightToggle.role = "button";
@@ -62,4 +60,5 @@ function toggleLight() {
 		localStorage.setItem("mode", "light");
 		toggleLight();
 	}
-})();
+
+}, 100);

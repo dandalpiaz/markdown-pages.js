@@ -21,6 +21,18 @@ header p {
     top: 7px;
 }
 
+header nav ul {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+nav a {
+    text-decoration: underline;
+    padding: 10px;
+}
+
 footer p {
     padding-bottom: 7px;
 }
@@ -48,7 +60,11 @@ a {
     border-radius: 2px;
 }
 
-/* adjust contain widths */
+/* adjust container */
+.container {
+    padding-top: 25px;
+}
+
 @media (max-width: 1199px) {
     .container {
         max-width: 100%;

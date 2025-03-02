@@ -1,7 +1,7 @@
 
 ![markdown logo](assets/images/mdp.svg =190x*)
 
-# markdown-pages.js - Sample Page
+# markdown-pages.js – Sample Page
 
 _`Last Updated: 4/29/2024`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/pages/sample-page.md)
 

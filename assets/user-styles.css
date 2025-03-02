@@ -189,3 +189,9 @@ figcaption {
         text-align: center;
     }
 }
+
+@media (max-width: 767px) {
+    header p, footer p {
+        display: none;
+    }
+}

@@ -1,7 +1,7 @@
 
 ![markdown logo](assets/images/mdp.svg)
 
-# markdown-pages.js - _simple Markdown-based static sites, without the generator_
+# markdown-pages.js – _simple Markdown-based static sites, without the generator_
 
 Use **markdown-pages.js** to create simple websites using [Markdown](https://www.markdownguide.org/basic-syntax/) files for page content. No site generator necessary - no build process, installs, etc. Client-side JavaScript fetches the Markdown files and handles the conversion to HTML. Content files can be edited directly where they are hosted! Check out the **[GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages)**!
 
@@ -64,7 +64,7 @@ conv.setOption('parseImgDimensions', 'true');
 
 ## Deployment
 
-The library can be used anywhere that web files are hosted - a traditional server, an object storage bucket like AWS s3, etc. Part of the aim of this project was to avoid the dependency of a static site generator, but [GitHub Pages](https://docs.github.com/en/pages/quickstart) remains a convenient option to host static files. [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/) also offers no-cost static file hosting.
+The library can be used anywhere that web files are hosted — a traditional server, an object storage bucket like AWS s3, etc. Part of the aim of this project was to avoid the dependency of a static site generator, but [GitHub Pages](https://docs.github.com/en/pages/quickstart) remains a convenient option to host static files. [Cloudflare Pages](https://developers.cloudflare.com/pages/framework-guides/deploy-anything/) also offers no-cost static file hosting.
 
 ## User Styles & Scripts
 
@@ -72,9 +72,9 @@ The example site includes styles from the [Pico CSS](https://picocss.com/) frame
 
 ## Limitations
 
-- **URL Structure** - since all work is done on the client side with the `index.html` file, a nested URL structure (e.g. /directory1/directory2/page) is not possible. Instead pages are referenced by a query parameter (/?page=file-name).
-- **Local Development** - since the site uses XMLHttpRequest to grab content, a local web server will be needed if you want to test things locally, e.g. `python -m http.server`. However, editing hosted files directly is part of the convenience/fun. 
-- **Custom layouts** - Markdown used in this way is fairly linear, so custom layouts won't be possible without adding additional HTML in the pages.
+- **URL Structure** – since all work is done on the client side with the `index.html` file, a nested URL structure (e.g. /directory1/directory2/page) is not possible. Instead pages are referenced by a query parameter (/?page=file-name).
+- **Local Development** – since the site uses XMLHttpRequest to grab content, a local web server will be needed if you want to test things locally, e.g. `python -m http.server`. However, editing hosted files directly is part of the convenience/fun. 
+- **Custom layouts** – Markdown used in this way is fairly linear, so custom layouts won't be possible without adding additional HTML in the pages.
 
 ## Todo
 

@@ -17,7 +17,7 @@ Use **markdown-pages.js** to create simple websites using [Markdown](https://www
 
 To use the library, simply add the JavaScript file in the `<head>` section of your `index.html` file and create empty `<header>`, `<main>`, and `<footer>` elements.
 
-```
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -40,7 +40,7 @@ To use the library, simply add the JavaScript file in the `<head>` section of yo
 
 Start from a fork of [markdown-pages.js](https://github.com/dandalpiaz/markdown-pages), or, use the CDN link like the snippet above. The library will use the `README.md` file for the homepage content. Optionally, a `header.md` and `footer.md` file can be created to populate those sections. All other pages should be stored in a `pages` directory. For example, a file at `pages/sample-page.md` can be linked to as follows:
 
-```
+```markdown
 Check out the [sample page](?page=sample-page)
 ```
 
@@ -52,7 +52,7 @@ _Note: if you need to use HTML elements that don't have a Markdown equivalent, y
 
 The library uses the [Showdown JS](https://showdownjs.com/) converter which provides some extra options for how the Markdown content will be converted. The following [Showdown options](https://showdownjs.com/docs/available-options/) are active for this library:
 
-```
+```javascript
 conv.setOption('tables', 'true');
 conv.setOption('emoji', 'true');
 conv.setOption('ghCompatibleHeaderId', 'true');

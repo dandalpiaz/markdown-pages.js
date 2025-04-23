@@ -3,10 +3,10 @@
 function setHighlightTheme(mode) {
 	var link = document.getElementById('highlight-styles');
 	if (mode == "light") {
-		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/a11y-light.min.css'; 
+		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/stackoverflow-light.min.css'; 
 	}
 	if (mode == "dark") {
-		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/vs2015.min.css'; 
+		link.href = 'https://unpkg.com/@highlightjs/cdn-assets@11.11.1/styles/vs2015.min.css'; 
 	}
 	setTimeout(function () {
 		hljs.highlightAll();		

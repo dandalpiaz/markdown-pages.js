@@ -25,11 +25,19 @@ footer p {
     padding-bottom: 7px;
 }
 
-/* font size */
-@media (min-width: 1200px) {
+/* font size, line heights */
+@media (min-width: 990px) {
     :root {
-        --font-size: 19px;
+        --font-size: 18px;
     }
+}
+
+p, li {
+    line-height: 1.75;
+}
+
+h1 {
+    font-size: 2.1rem;
 }
 
 /* link underlines for a11y */
@@ -72,6 +80,7 @@ h2 {
 /* adjust code */
 code {
     margin-top: 2px;
+    padding: 4px;
 }
 
 pre {

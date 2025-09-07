@@ -18,15 +18,11 @@ function toggleLight() {
 	var mode = localStorage.getItem("mode");
 	if (mode == "light") {
 		document.documentElement.setAttribute("data-theme", "dark");
-		document.getElementById('light-toggle').innerHTML = "🌗 Light";
-		document.getElementById('light-toggle').style.color = "#333";
     	localStorage.setItem("mode", "dark");
 		setHighlightTheme("dark");
 	}
 	if (mode == "dark") {
 		document.documentElement.setAttribute("data-theme", "light");
-		document.getElementById('light-toggle').innerHTML = "🌗 Dark";
-		document.getElementById('light-toggle').style.color = "#ddd";
 		localStorage.setItem("mode", "light");
 		setHighlightTheme("light");
 	}
@@ -35,15 +31,6 @@ function toggleLight() {
 // get current light/dark mode on page load
 (function () {
 	document.querySelector('main').className = "container";
-
-	var lightToggle = document.createElement("a");
-	lightToggle.href = "#";
-	lightToggle.role = "button";
-	lightToggle.onclick = function() {toggleLight();return false;};
-	lightToggle.id = "light-toggle";
-	lightToggle.className = "contrast";
-	lightToggle.innerHTML = "🌗 Light"
-	document.body.prepend(lightToggle);
 
 	var hljs = document.createElement('script');
 	hljs.src = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js';
@@ -63,3 +50,6 @@ function toggleLight() {
 		toggleLight();
 	}
 })();
+
+// add ID to main element for skip link
+document.querySelector('main').id = "main";

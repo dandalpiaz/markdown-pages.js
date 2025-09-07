@@ -8,17 +8,38 @@ header, footer {
     padding: 0px !important;
 }
 
+header {
+    margin-bottom: 20px;
+}
+
 header p, footer p {
     margin: 0px;
-    position: absolute;
-    right: 50%;
-    transform: translate(50%, 0px);
     font-size: 15px;
     font-weight: 500;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
 }
 
 header p {
     top: 7px;
+}
+
+header a, footer a {
+    text-decoration: none;
+}
+
+#skip a {
+    display: block;
+    position: absolute;
+    left: -999px;
+    top: -999px;
+    padding: 5px;
+}
+
+#skip a:focus {
+    top: 0;
+    left: 0;
 }
 
 footer p {
@@ -46,17 +67,21 @@ a {
 }
 
 /* focus indicator for a11y */
-[data-theme="dark"] a:focus {
+[data-theme="dark"] a:focus, [data-theme="dark"] button:focus {
     outline: 2px solid rgba(225,225,225,0.5);
     border-radius: 2px;
 }
 
-[data-theme="light"] a:focus {
+[data-theme="light"] a:focus, [data-theme="light"] button:focus {
     outline: 2px solid rgba(25,25,25,0.5);
     border-radius: 2px;
 }
 
 /* adjust contain widths */
+.container {
+    padding-top: 0px;
+}
+
 @media (max-width: 1199px) {
     .container {
         max-width: 100%;
@@ -68,7 +93,7 @@ a {
 @media (max-width: 575px) {
     .container {
         padding-left: 16px;
-        padding-right: 16px;
+        padding-right: 16px; 
     }
 }
 
@@ -90,12 +115,12 @@ pre {
 
 /* dark/light mode toggle button */
 #light-toggle {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    padding: 5px;
-    font-size: 14px;
-    font-weight: 500;
+    padding: 0px;
+    display: inline-block;
+    width: auto;
+    background: none;
+    border: none;
+    font-size: 17px;
 }
 
 /* increase color contrast for a11y */
@@ -151,6 +176,14 @@ a {
     color: #ccc;
 }
 
+[data-theme="dark"] #skip a {
+    background: #11191f; 
+}
+
+[data-theme="light"] #skip a {
+    background: #ffffff; 
+}
+
 /* non-md elements / classes */
 figure {
     display: inline-block;
@@ -196,11 +229,5 @@ figcaption {
         margin-left: auto;
         margin-right: auto;
         text-align: center;
-    }
-}
-
-@media (max-width: 767px) {
-    header p, footer p {
-        display: none;
     }
 }

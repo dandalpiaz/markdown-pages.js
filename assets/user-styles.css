@@ -18,7 +18,7 @@ header p, footer p {
     font-weight: 500;
     width: 100%;
     text-align: center;
-    padding: 5px;
+    padding: 7px;
 }
 
 header p {
@@ -120,7 +120,7 @@ pre {
     width: auto;
     background: none;
     border: none;
-    font-size: 17px;
+    font-size: 16px;
 }
 
 /* increase color contrast for a11y */

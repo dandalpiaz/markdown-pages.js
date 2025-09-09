@@ -28,6 +28,31 @@ function toggleLight() {
 	}
 }
 
+// bold the link for the current page in the header
+function boldCurrentPage() {
+	var params = new URLSearchParams(window.location.search);
+	var page = params.get('page');
+	if (page) {
+		var links = document.querySelectorAll('header p a');
+		links.forEach(function(link) {
+			if (link.getAttribute('href').includes('page=' + page)) {
+				link.style.fontWeight = 'bold';
+				link.setAttribute('aria-current', 'page');
+			}
+		});
+	} else {
+		var homeLink = document.querySelector('header p a[href="."]');
+		if (homeLink) {
+			homeLink.style.fontWeight = 'bold';
+			homeLink.setAttribute('aria-current', 'page');
+		}
+	}
+}
+
+setTimeout(function () {
+	boldCurrentPage();
+}, 100);
+
 // get current light/dark mode on page load
 (function () {
 	document.querySelector('main').className = "container";

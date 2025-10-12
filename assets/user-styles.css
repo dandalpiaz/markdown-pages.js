@@ -102,6 +102,25 @@ h2 {
     margin-bottom: 1.5rem;
 }
 
+/* adjust lists */
+
+ul ul, ol ol {
+    margin-top: 10px;
+    padding-left: 25px;
+}
+
+/* adjust blockquote */
+
+blockquote p {
+    margin-bottom: 0px;
+}
+
+/* adjust tables */
+
+th {
+    font-weight: 700;
+}
+
 /* adjust code */
 code {
     margin-top: 2px;

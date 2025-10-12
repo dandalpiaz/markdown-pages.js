@@ -24,10 +24,10 @@ To use the library, simply add the JavaScript file in the `<head>` section of yo
 <html lang="en">
 <head>
   <!-- load main JS file -->
-  <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.2/markdown-pages.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.3/markdown-pages.min.js"></script>
 
   <!-- load optional user styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.2/assets/user-styles.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.3/assets/user-styles.min.css">
 </head>
 <body>
 	<header></header>
@@ -35,7 +35,7 @@ To use the library, simply add the JavaScript file in the `<head>` section of yo
 	<footer></footer>
 
 	<!-- load optional user scripts -->
-	<script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.2/assets/user-scripts.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.3/assets/user-scripts.min.js"></script>
 </body>
 </html>
 ```

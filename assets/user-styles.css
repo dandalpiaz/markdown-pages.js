@@ -9,7 +9,7 @@ header, footer {
 }
 
 header {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 header p, footer p {
@@ -98,6 +98,11 @@ a {
 }
 
 /* adjust heading margins */
+h1 {
+    margin-top: 30px !important;
+    margin-bottom: 30px;
+}
+
 h2 {
     margin-bottom: 1.5rem;
 }

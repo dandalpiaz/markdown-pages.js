@@ -208,6 +208,14 @@ a {
     background: #ffffff; 
 }
 
+[data-theme="dark"] figcaption {
+    color: #bbb;
+}
+
+[data-theme="light"] figcaption {
+    color: #444;
+}
+
 /* non-md elements / classes */
 figure {
     display: inline-block;

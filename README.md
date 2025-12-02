@@ -3,7 +3,7 @@
 
 # markdown-pages.js – _simple Markdown-based static sites, without the generator_
 
-_`Last Updated: 9/9/2025`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md) <button id="light-toggle" onclick="toggleLight()" aria-label="toggle color mode">🌗</button>
+_`Last Updated: 12/1/2025`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/README.md) <button id="light-toggle" onclick="toggleLight()" aria-label="toggle color mode">🌗</button>
 
 Use **markdown-pages.js** to create simple websites using [Markdown](https://www.markdownguide.org/basic-syntax/) files for page content. No site generator necessary - no build process, installs, etc. Client-side JavaScript fetches the Markdown files and handles the conversion to HTML. Content files can be edited directly where they are hosted! Check out the **[GitHub ![GitHub Logo](assets/images/github.png) repository](https://github.com/dandalpiaz/markdown-pages)**!
 
@@ -24,10 +24,10 @@ To use the library, simply add the JavaScript file in the `<head>` section of yo
 <html lang="en">
 <head>
   <!-- load main JS file -->
-  <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.3/markdown-pages.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.4/markdown-pages.min.js"></script>
 
   <!-- load optional user styles -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.3/assets/user-styles.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.4/assets/user-styles.min.css">
 </head>
 <body>
 	<header></header>
@@ -35,7 +35,7 @@ To use the library, simply add the JavaScript file in the `<head>` section of yo
 	<footer></footer>
 
 	<!-- load optional user scripts -->
-	<script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.3/assets/user-scripts.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/dandalpiaz/markdown-pages.js@1.0.4/assets/user-scripts.min.js"></script>
 </body>
 </html>
 ```

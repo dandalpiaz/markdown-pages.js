@@ -40,7 +40,7 @@ function boldCurrentPage() {
 				link.setAttribute('aria-current', 'page');
 			}
 		});
-	} else {
+	} else if (params.size == 0) {
 		var homeLink = document.querySelector('header p a[href="."]');
 		if (homeLink) {
 			homeLink.style.fontWeight = 'bold';

@@ -3,20 +3,28 @@ var script = document.createElement('script');
 script.src = 'https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js';
 document.head.appendChild(script);
 script.onload = function() {
-    function getParameterByName(name, url = window.location.href) {
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const entries = urlParams.entries();
+    const firstPair = entries.next().value;
+    if (firstPair) {
+        var firstKey = firstPair[0];
+        var firstValue = firstPair[1];
 
-    var page = getParameterByName('page');
-    if (page) {
-        page = "pages/" + page + ".md"
+        if (firstValue && firstValue.endsWith(".md")) {
+            firstValue = firstValue.slice(0, -3);
+        }
+
+        if (firstKey && !firstValue) {
+            page = firstKey + ".md"
+        } else if (firstKey=="page" && firstValue) {
+            page = "pages/" + firstValue + ".md"
+        } else if (firstKey && firstValue) {
+            page = firstKey + "/" + firstValue + ".md"
+        } else {
+            page = "README.md";
+        }
     } else {
-        page = "README.md"; // or index.md ???
+        page = "README.md";
     }
 
     var client = new XMLHttpRequest();

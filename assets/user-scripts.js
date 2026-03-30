@@ -20,11 +20,17 @@ function toggleLight() {
 		document.documentElement.setAttribute("data-theme", "dark");
     	localStorage.setItem("mode", "dark");
 		setHighlightTheme("dark");
+		setTimeout(function () {
+			document.getElementById("light-toggle").setAttribute("aria-pressed", "false");		
+		}, 175);
 	}
 	if (mode == "dark") {
 		document.documentElement.setAttribute("data-theme", "light");
 		localStorage.setItem("mode", "light");
 		setHighlightTheme("light");
+		setTimeout(function () {
+			document.getElementById("light-toggle").setAttribute("aria-pressed", "true");		
+		}, 175);
 	}
 }
 

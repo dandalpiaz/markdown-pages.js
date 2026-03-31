@@ -1,7 +1,7 @@
 
 # Heading Level 1 – Sample Page
 
-_`Last Updated: 3/30/2026`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/pages/sample-page.md) <button id="light-toggle" onclick="toggleLight()" aria-label="switch to light mode" aria-pressed="false">🌗</button>
+_`Last Updated: 3/30/2026`_ [`edit`](https://github.com/dandalpiaz/markdown-pages/edit/main/pages/sample-page.md) <button id="light-toggle" onclick="toggleLight()" aria-label="switch to light mode">🌗</button>
 
 
 <figure class="figure-right" style="width: 500px;">
